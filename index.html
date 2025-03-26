@@ -7,24 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="game-container">
-        <!-- Título del juego -->
+    <div id="overlay">
         <h1 id="game-title">Mi Juego</h1>
-
-        <!-- Contenedor del video -->
-        <div id="video-container">
-            <video id="game-video" controls>
-                <source src="video1.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </div>
-
-        <!-- Contenedor de botones -->
         <div id="button-container">
             <button>Iniciar Juego</button>
             <button>Opciones</button>
         </div>
     </div>
+
+    <video id="background-video" autoplay loop muted>
+        <source src="video1.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+    </video>
 
     <script src="juego.js"></script>
 </body>
