@@ -1,32 +1,35 @@
 /* Asegurarse de que el video esté en el fondo */
+/* Reinicia márgenes y rellenos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Video se ajusta al tamaño de la pantalla sin deformarse */
 video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;   /* Ajusta el video al 100% del ancho de la pantalla */
-    height: auto;  /* Mantiene la proporción del video */
-    object-fit: cover;
-    z-index: -1; /* Asegura que el video esté en el fondo */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
-/* El título debe ocupar el ancho completo, pero no se desbordará en pantalla horizontal */
+/* El título del juego */
 h1 {
     text-align: center;
-    font-size: 3rem; /* Puedes ajustar el tamaño de fuente según el diseño */
-    padding: 10px;
-    margin: 0;
-    flex-shrink: 0;  /* Asegura que el título no se reduzca */
+    font-size: 2rem; /* Ajusta el tamaño en función del dispositivo */
+    margin: 10px 0;
+    padding: 0;
+    flex-shrink: 0;
 }
 
-/* Ajuste para los botones */
+/* Botones ajustados al 100% del ancho */
 button {
-    width: 100%; /* Hace que los botones ocupen todo el ancho de la pantalla */
-    max-width: 300px;  /* Evita que los botones sean demasiado grandes */
+    width: 80%;  /* Ajuste para móviles */
+    max-width: 300px; /* No se hace demasiado grande */
     padding: 10px;
-    font-size: 1.5rem;
-    margin: 10px auto;
+    font-size: 1.2rem;
+    margin: 10px;
     display: block;
-    box-sizing: border-box;  /* Incluye el padding y el border en el tamaño total */
 }
 }
 
@@ -50,27 +53,28 @@ button {
     text-align: center; /* Centra el texto del botón */
     word-wrap: break-word; /* Asegura que el texto largo se ajuste dentro del botón */
 }
-/* Asegura que la página no tenga márgenes innecesarios */
+/* Aseguramos que el cuerpo no tenga espacio extra */
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;  /* Esto evita el desbordamiento */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
-
 /* Para que el juego se ajuste al tamaño de la pantalla sin desconfigurar */
 #game-container {
     width: 100%;
     height: 100vh; /* Esto hará que ocupe toda la altura de la pantalla */
 }
 
-/* Ajuste del contenedor principal */
+/* Estilo para el contenedor principal */
 #game-container {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
-    height: 100vh; /* Asegura que ocupe toda la pantalla */
-    overflow: hidden; /* Previene que los botones queden fuera */
+    align-items: center;
 }
 /* Para asegurarte de que no haya márgenes o rellenos innecesarios */
 body {
@@ -80,27 +84,20 @@ body {
 }
 
 
-/* Para móviles en modo horizontal, ajustamos el diseño */
-@media screen and (orientation: landscape) {
+/* Ajustes para pantallas grandes y modo horizontal */
+@media screen and (min-width: 600px) {
     #game-container {
         flex-direction: row;
-        justify-content: space-around;
-    }
-
-    /* Aquí puedes ajustar cómo se muestran el título y los botones en horizontal */
-    h1 {
-        font-size: 2.5rem;
-        margin: 0;
-        flex-shrink: 0;
+        justify-content: center;
+        align-items: flex-start;
     }
 
     video {
-        width: 50%;  /* Limita el tamaño del video para que no ocupe toda la pantalla */
+        width: 50%;  /* Limita el tamaño del video en pantallas grandes */
         height: auto;
     }
 
     button {
-        width: 40%; /* Hace que los botones no se salgan de la pantalla en modo horizontal */
-        max-width: 150px;
+        width: 30%;  /* Ajusta el ancho de los botones */
     }
 }
