@@ -98,3 +98,9 @@ button {
         font-size: 18px;
     }
 }
+@media (max-width: 900px) and (orientation: landscape) {
+    #titulo {
+        font-size: 20px; /* O el tamaño que prefieras */
+    }
+}
+
