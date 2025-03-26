@@ -1,103 +1,83 @@
-/* Asegurarse de que el video esté en el fondo */
-/* Reinicia márgenes y rellenos globales */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/* Video se ajusta al tamaño de la pantalla sin deformarse */
+
+/* Estilos del body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+}
+
+/* Contenedor principal */
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px; /* Ajuste para que no sea demasiado ancho */
+    padding: 10px;
+}
+
+/* Título */
+h1 {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Contenedor del video */
+#video-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Video */
 video {
     width: 100%;
-    max-width: 100%;
     height: auto;
-    object-fit: contain;
+    border-radius: 10px;
 }
 
-/* El título del juego */
-h1 {
-    text-align: center;
-    font-size: 2rem; /* Ajusta el tamaño en función del dispositivo */
-    margin: 10px 0;
-    padding: 0;
-    flex-shrink: 0;
+/* Contenedor de botones */
+#button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
 }
 
-/* Botones ajustados al 100% del ancho */
+/* Botones */
 button {
-    width: 80%;  /* Ajuste para móviles */
-    max-width: 300px; /* No se hace demasiado grande */
+    width: 80%;
+    max-width: 250px;
     padding: 10px;
     font-size: 1.2rem;
-    margin: 10px;
-    display: block;
-}
-}
-
-#boton1 {
-    top: 50%;
-    left: 0%;
-    transform: translate(-50%, -50%);
-}
-
-#boton2 {
-    top: 60%; /* Botón 2 debajo del 1 */
-    left: 100%;
-    transform: translate(-50%, -50%);
-}
-#options-container button {
-    display: block;  /* Asegura que los botones estén en una nueva línea */
-    width: 100%;     /* Los botones ocupan todo el ancho disponible */
-    box-sizing: content-box; /* Incluye el padding y borde en el tamaño total */
-    padding: 10px;
     margin: 5px 0;
-    text-align: center; /* Centra el texto del botón */
-    word-wrap: break-word; /* Asegura que el texto largo se ajuste dentro del botón */
-}
-/* Aseguramos que el cuerpo no tenga espacio extra */
-body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-/* Para que el juego se ajuste al tamaño de la pantalla sin desconfigurar */
-#game-container {
-    width: 100%;
-    height: 100vh; /* Esto hará que ocupe toda la altura de la pantalla */
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4757;
+    color: white;
+    cursor: pointer;
 }
 
-/* Estilo para el contenedor principal */
-#game-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-/* Para asegurarte de que no haya márgenes o rellenos innecesarios */
-body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Evita el desbordamiento de la página */
+button:hover {
+    background-color: #ff6b81;
 }
 
-
-/* Ajustes para pantallas grandes y modo horizontal */
+/* RESPONSIVE */
 @media screen and (min-width: 600px) {
     #game-container {
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-    }
-
-    video {
-        width: 50%;  /* Limita el tamaño del video en pantallas grandes */
-        height: auto;
-    }
-
-    button {
-        width: 30%;  /* Ajusta el ancho de los botones */
+        max-width: 600px;
     }
 }
+
