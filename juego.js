@@ -182,3 +182,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // Iniciar la escena
     transition_scene('scene1'); // Inicializar con la primera escena
 });
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("playMusic").addEventListener("click", function() {
+        let musica = document.getElementById("musicaFondo");
+        musica.play().catch(error => console.log("Error al reproducir la música:", error));
+    });
+});
