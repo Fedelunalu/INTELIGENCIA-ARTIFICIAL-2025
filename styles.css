@@ -103,4 +103,32 @@ button {
         font-size: 10px; /* O el tamaño que prefieras */
     }
 }
+/* Modo horizontal en celulares (pantallas pequeñas en landscape) */
+@media (max-width: 600px) and (orientation: landscape) {
+    /* Reduce el tamaño de la letra */
+    body {
+        font-size: 12px; /* Ajusta según necesidad */
+    }
+
+    #titulo {
+        font-size: 18px; /* Ajusta el tamaño del título */
+    }
+
+    /* Botones en una sola línea */
+    .botones {
+        display: flex;
+        flex-direction: row; /* Alinea los botones en fila */
+        justify-content: center; /* Centra los botones */
+        gap: 10px; /* Espaciado entre botones */
+        position: absolute;
+        bottom: 10vh; /* Ajusta la posición */
+        width: 100%;
+    }
+
+    .botones button {
+        width: auto; /* Tamaño automático */
+        padding: 10px;
+        font-size: 14px; /* Botones más pequeños */
+    }
+}
 
