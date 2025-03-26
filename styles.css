@@ -15,7 +15,7 @@ video {
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 40px;
+    font-size: 30px;
     color: white;
     z-index: 10; /* Asegura que el título esté encima del video */
 }
@@ -86,9 +86,9 @@ button {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px; /* Espaciado entre botones */
+        gap: 60px; /* Espaciado entre botones */
         position: absolute;
-        bottom: 10vh; /* Mueve los botones más abajo */
+        bottom: 40vh; /* Mueve los botones más abajo */
         width: 100%;
     }
 
@@ -98,9 +98,9 @@ button {
         font-size: 18px;
     }
 }
-@media (max-width: 900px) and (orientation: landscape) {
+@media (max-width: 600px) and (orientation: landscape) {
     #titulo {
-        font-size: 20px; /* O el tamaño que prefieras */
+        font-size: 10px; /* O el tamaño que prefieras */
     }
 }
 
