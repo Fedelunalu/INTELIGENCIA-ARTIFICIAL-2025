@@ -5,64 +5,57 @@
     box-sizing: border-box;
 }
 
-/* Estilos del body */
+/* Ajustes generales */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #000;
+    overflow: hidden;
+    position: relative;
 }
 
-/* Contenedor principal */
-#game-container {
+/* Video de fondo */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Capa de contenido */
+#overlay {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 500px; /* Ajuste para que no sea demasiado ancho */
-    padding: 10px;
+    height: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Oscurece un poco para mejorar legibilidad */
 }
 
 /* Título */
 h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: white;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-/* Contenedor del video */
-#video-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-/* Video */
-video {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Contenedor de botones */
-#button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-    width: 100%;
+    margin-bottom: 20px;
 }
 
 /* Botones */
+#button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 button {
-    width: 80%;
-    max-width: 250px;
+    width: 200px;
     padding: 10px;
     font-size: 1.2rem;
-    margin: 5px 0;
     border: none;
     border-radius: 5px;
     background-color: #ff4757;
@@ -75,9 +68,15 @@ button:hover {
 }
 
 /* RESPONSIVE */
-@media screen and (min-width: 600px) {
-    #game-container {
-        max-width: 600px;
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    button {
+        width: 150px;
+        font-size: 1rem;
     }
 }
+
 
