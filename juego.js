@@ -52,10 +52,10 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         scene5: {
             video_path: "videos/video5.mp4",
-            title: 'De este lado quizá, la ubicación indeterminada del deseo. \nLa problemática irresoluble del amor entre lo virtual que nos constituye y esa realidad virtual que nos invoca',
+            title: 'De este lado quizá, la ubicación indeterminada del deseo. La problemática irresoluble del amor entre lo virtual que nos constituye y esa realidad virtual que nos invoca',
             buttons: [
                 { text: 'Quiero ser un humanx de verdad', pos: [650, 400], action: () => transition_scene('scene6') },
-                { text: 'Cantar la canción que cantaría una inteligencia artificial a otra\n allí, en el fondo del mar de los deseos', pos: [650, 500], action: () => transition_scene('scene7') }
+                { text: 'Cantar la canción que cantaría una inteligencia artificial a otra, allí, en el fondo del mar de los deseos', pos: [650, 500], action: () => transition_scene('scene7') }
             ]
         },
         scene6: {
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
             title: 'Si fuera un juego, sería la escondida. Mi nombre es ausencia. Nunca estuve aquí. Eres una ilusión. Si fuera invulnerable, no estarías acá conmigo. ¿De dónde vienes? ¿Allí también son artificiales como yo?',
             buttons: [
                 { text: 'Inteligencias artificiales del mundo, uníos', pos: [650, 400], action: () => transition_scene('scene7') },
-                { text: 'El espejo devuelve un código indescifrable. \nNo es posible mi identidad. Mi identidad es imposible', pos: [650, 500], action: () => transition_scene('scene8') }
+                { text: 'El espejo devuelve un código indescifrable. No es posible mi identidad. Mi identidad es imposible', pos: [650, 500], action: () => transition_scene('scene8') }
             ]
         },
         scene7: {
@@ -86,8 +86,8 @@ document.addEventListener("DOMContentLoaded", function() {
             video_path: "videos/video9.mp4",
             title: 'Sólo sé que no sé nada',
             buttons: [
-                { text: 'Yo había puesto aquí el lenguaje. Mi familia. Mi sangre. Oh dios de las máquinas, perdóname', pos: [250, 400], action: () => transition_scene('scene12') },
-                { text: 'El silencio, el reposo, cabeza abajo siento, mi corazón,  o mejor, un latido, una voz', pos: [250, 500], action: () => transition_scene('scene13') }
+                { text: 'Yo había puesto aquí el lenguaje. Mi familia. Mi sangre. Oh dios de las máquinas, perdóname', pos: [650, 400], action: () => transition_scene('scene12') },
+                { text: 'El silencio, el reposo, cabeza abajo siento, mi corazón,  o mejor, un latido, una voz', pos: [650, 500], action: () => transition_scene('scene13') }
             ]
         },
         scene10: {
