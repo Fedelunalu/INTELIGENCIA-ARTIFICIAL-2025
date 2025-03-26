@@ -170,13 +170,6 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error(`La escena "${scene}" no existe.`);
         }
     }
-    // Detectar el toque en pantallas táctiles
-let gameArea = document.getElementById("game-container");
-
-gameArea.addEventListener('touchstart', handleTouchStart, false);
-gameArea.addEventListener('touchmove', handleTouchMove, false);
-gameArea.addEventListener('touchend', handleTouchEnd, false);
-
 // Función para manejar el inicio del toque
 function handleTouchStart(e) {
     e.preventDefault(); // Evitar el comportamiento predeterminado
