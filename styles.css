@@ -52,22 +52,30 @@ button {
     text-align: center; /* Centra el texto del botón */
     word-wrap: break-word; /* Asegura que el texto largo se ajuste dentro del botón */
 }
+/* Estilos generales para dispositivos pequeños */
 @media (max-width: 600px) {
     video {
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
+        width: 100vw; /* Ancho total de la pantalla */
+        height: 100vh; /* Alto total de la pantalla */
+        object-fit: cover; /* Asegura que el video cubra toda la pantalla */
     }
 
     body {
-        overflow: hidden; /* Evita el desplazamiento en móviles */
+        overflow: hidden; /* Evita el desplazamiento */
+    }
+
+    /* Ajustes para el título */
+    #titulo {
+        font-size: 20px; /* Tamaño del título por defecto en móvil */
     }
 }
+
+/* Para móviles en vertical (portrait) */
 @media (max-width: 600px) and (orientation: portrait) {
     .botones {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Coloca los botones en columna */
+        align-items: center; /* Centra los botones */
         gap: 20px; /* Espaciado entre botones */
         position: absolute;
         bottom: 10vh; /* Mueve los botones más abajo */
@@ -75,35 +83,13 @@ button {
     }
 
     .botones button {
-        width: 80%; /* Botones más grandes en móvil */
+        width: 80%; /* Hace los botones más grandes */
         padding: 15px;
-        font-size: 18px;
+        font-size: 18px; /* Ajusta el tamaño de la fuente en los botones */
     }
 }
-/* Para móviles en vertical */
-@media (max-width: 600px) and (orientation: portrait) {
-    .botones {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 60px; /* Espaciado entre botones */
-        position: absolute;
-        bottom: 40vh; /* Mueve los botones más abajo */
-        width: 100%;
-    }
 
-    .botones button {
-        width: 80%; /* Botones más grandes */
-        padding: 15px;
-        font-size: 18px;
-    }
-}
-@media (max-width: 600px) and (orientation: landscape) {
-    #titulo {
-        font-size: 10px; /* O el tamaño que prefieras */
-    }
-}
-/* Modo horizontal en celulares (pantallas pequeñas en landscape) */
+/* Para móviles en horizontal (landscape) */
 @media (max-width: 600px) and (orientation: landscape) {
     /* Reduce el tamaño de la letra */
     body {
@@ -114,7 +100,7 @@ button {
         font-size: 18px; /* Ajusta el tamaño del título */
     }
 
-    /* Botones en una sola línea */
+    /* Botones en una sola línea (horizontal) */
     .botones {
         display: flex;
         flex-direction: row; /* Alinea los botones en fila */
