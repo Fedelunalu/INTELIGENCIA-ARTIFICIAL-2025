@@ -52,4 +52,15 @@ button {
     text-align: center; /* Centra el texto del botón */
     word-wrap: break-word; /* Asegura que el texto largo se ajuste dentro del botón */
 }
+@media (max-width: 600px) {
+    video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    body {
+        overflow: hidden; /* Evita el desplazamiento en móviles */
+    }
+}
 
