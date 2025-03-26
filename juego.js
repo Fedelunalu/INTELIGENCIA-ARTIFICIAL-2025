@@ -1,3 +1,11 @@
+window.onload = function() {
+    let musica = document.getElementById("musicaFondo");
+    if (musica) {
+        musica.play().catch(error => {
+            console.log("Reproducción automática bloqueada por el navegador:", error);
+        });
+    }
+};
 document.addEventListener("DOMContentLoaded", function() {
     // Crear botones dinámicamente
     let boton1 = document.createElement("button");
