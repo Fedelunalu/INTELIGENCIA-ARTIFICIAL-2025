@@ -175,7 +175,6 @@ document.addEventListener("DOMContentLoaded", function() {
 transition_scene('scene1'); // Inicializar con la primera escena
 
 // Asegúrate de que todo esté correctamente cerrado
-document.addEventListener("DOMContentLoaded", function() {
     let musica = document.getElementById("musicaFondo");
     let boton = document.getElementById("playMusic");
 
