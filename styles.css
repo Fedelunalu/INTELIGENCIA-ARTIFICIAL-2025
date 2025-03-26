@@ -1,0 +1,54 @@
+/* Asegurarse de que el video esté en el fondo */
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Asegura que el video esté en el fondo */
+}
+
+/* Estilo para el título */
+#titulo {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    color: white;
+    z-index: 10; /* Asegura que el título esté encima del video */
+}
+
+/* Estilo para los botones */
+button {
+    position: absolute;
+    font-size: 20px;
+    background-color: rgba(0, 0, 255, 0.7); /* Color de fondo de los botones */
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10; /* Asegura que los botones estén sobre el video */
+}
+
+#boton1 {
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+}
+
+#boton2 {
+    top: 60%; /* Botón 2 debajo del 1 */
+    left: 100%;
+    transform: translate(-50%, -50%);
+}
+#options-container button {
+    display: block;  /* Asegura que los botones estén en una nueva línea */
+    width: 100%;     /* Los botones ocupan todo el ancho disponible */
+    box-sizing: content-box; /* Incluye el padding y borde en el tamaño total */
+    padding: 10px;
+    margin: 5px 0;
+    text-align: center; /* Centra el texto del botón */
+    word-wrap: break-word; /* Asegura que el texto largo se ajuste dentro del botón */
+}
