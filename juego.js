@@ -170,6 +170,38 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error(`La escena "${scene}" no existe.`);
         }
     }
+    // Detectar el toque en pantallas táctiles
+let gameArea = document.getElementById("game-container");
+
+gameArea.addEventListener('touchstart', handleTouchStart, false);
+gameArea.addEventListener('touchmove', handleTouchMove, false);
+gameArea.addEventListener('touchend', handleTouchEnd, false);
+
+// Función para manejar el inicio del toque
+function handleTouchStart(e) {
+    e.preventDefault(); // Evitar el comportamiento predeterminado
+    let touch = e.touches[0]; // Obtener la posición del toque
+    console.log("Touch started at", touch.pageX, touch.pageY);
+}
+
+// Función para manejar el movimiento del toque
+function handleTouchMove(e) {
+    e.preventDefault();
+    let touch = e.touches[0];
+    console.log("Touch moved at", touch.pageX, touch.pageY);
+}
+
+// Función para manejar el final del toque
+function handleTouchEnd(e) {
+    e.preventDefault();
+    console.log("Touch ended");
+}
+
+// También puedes agregar eventos de clic como alternativa para dispositivos de escritorio
+gameArea.addEventListener('click', (e) => {
+    console.log("Mouse click at", e.pageX, e.pageY);
+});
+
 
     // Iniciar la escena
     transition_scene('scene1'); // Inicializar con la primera escena
