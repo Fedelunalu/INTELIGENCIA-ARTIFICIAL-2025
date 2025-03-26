@@ -55,11 +55,10 @@ button {
     
 }
 #playMusic {
-    font-size: 8px; /* Tamaño de la fuente más pequeño */
+    font-size: 10px; /* Tamaño de la fuente más pequeño */
     padding: 5px 10px; /* Ajuste de los bordes para hacerlo más compacto */
     border-radius: 5px; /* Bordes redondeados */
     border: 1px solid #ccc; /* Bordes más delgados */
-    background-color: #f0f0f0; /* Color de fondo */
 
 /* Estilos generales para dispositivos pequeños */
 @media (max-width: 600px) {
