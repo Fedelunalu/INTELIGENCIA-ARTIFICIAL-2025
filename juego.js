@@ -140,8 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-
-    // Función para cambiar la escena
+ // Función para cambiar la escena
     function transition_scene(scene) {
         if (scenes[scene]) {
             const sceneData = scenes[scene];
@@ -170,6 +169,7 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error(`La escena "${scene}" no existe.`);
         }
     }
+
     // Iniciar la escena
     transition_scene('scene1'); // Inicializar con la primera escena
 });
