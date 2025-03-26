@@ -172,22 +172,21 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Iniciar la escena
-    transition_scene('scene1'); // Inicializar con la primera escena
+transition_scene('scene1'); // Inicializar con la primera escena
 
-// Esta función asegura que el código solo se ejecute una vez que el DOM esté completamente cargado
+// Asegúrate de que todo esté correctamente cerrado
 document.addEventListener("DOMContentLoaded", function() {
-    // Seleccionamos los elementos de audio y el botón
     let musica = document.getElementById("musicaFondo");
     let boton = document.getElementById("playMusic");
 
-    // Verificamos si el elemento de música existe en el HTML
     if (!musica) {
         console.log("El elemento de audio no se encontró en el HTML.");
         return;
     }
 
-    // Añadimos el evento de clic al botón para reproducir la música
     boton.addEventListener("click", function() {
         musica.play().catch(error => console.log("Error al reproducir la música:", error));
     });
 });
+
+// Asegúrate de que no haya código incompleto después de esta sección.
