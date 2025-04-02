@@ -85,19 +85,12 @@ button {
         left: 250px; /* Alineados a la izquierda */
         display: flex;
         flex-direction: column; /* Uno debajo del otro */
+        align-items: flex-start; /* Asegura que estén alineados a la izquierda */
         gap: 50px; /* Espaciado entre botones */
-    }
-
-    .botones button:nth-child(1) {
-        top: 600px;
-    }
-
-    .botones button:nth-child(2) {
-        top: 800px;
+        top: 400px; /* Posición inicial */
     }
 
     .botones button {
-        position: absolute;
         width: auto;
         padding: 15px;
         font-size: 18px;
@@ -108,27 +101,23 @@ button {
 @media (max-width: 600px) and (orientation: landscape) {
     .botones {
         position: absolute;
-        left: 500px; /* Centrado horizontalmente */
+        left: 50%; /* Centrado horizontalmente */
+        transform: translateX(-50%); /* Ajuste fino para centrar */
         display: flex;
-        flex-direction: column; /* Se mantiene en columna */
+        flex-direction: column; /* Mantiene una columna */
+        align-items: center; /* Centra los botones */
         gap: 50px; /* Espaciado para evitar superposición */
-    }
-
-    .botones button:nth-child(1) {
-        top: 300px;
-    }
-
-    .botones button:nth-child(2) {
-        top: 400px;
+        top: 300px; /* Ajustado para mejor visibilidad */
     }
 
     .botones button {
-        position: absolute;
         width: auto;
         padding: 15px;
         font-size: 18px;
     }
-     #titulo {
-        font-size: 15px; /* Tamaño del título por defecto en móvil */
+
+    #titulo {
+        font-size: 15px; /* Ajuste del tamaño del título */
     }
 }
+
