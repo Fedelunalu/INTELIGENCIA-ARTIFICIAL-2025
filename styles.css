@@ -89,11 +89,11 @@ button {
     }
 
     .botones button:nth-child(1) {
-        top: 400px;
+        top: 600px;
     }
 
     .botones button:nth-child(2) {
-        top: 500px;
+        top: 800px;
     }
 
     .botones button {
@@ -115,11 +115,11 @@ button {
     }
 
     .botones button:nth-child(1) {
-        top: 400px;
+        top: 300px;
     }
 
     .botones button:nth-child(2) {
-        top: 500px;
+        top: 400px;
     }
 
     .botones button {
@@ -127,5 +127,8 @@ button {
         width: auto;
         padding: 15px;
         font-size: 18px;
+    }
+     #titulo {
+        font-size: 15px; /* Tamaño del título por defecto en móvil */
     }
 }
