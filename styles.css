@@ -59,6 +59,7 @@ button {
     padding: 5px 10px; /* Ajuste de los bordes para hacerlo más compacto */
     border-radius: 5px; /* Bordes redondeados */
     border: 1px solid #ccc; /* Bordes más delgados */
+} /* <- Faltaba esta llave de cierre */    
 
 /* Estilos generales para dispositivos pequeños */
 @media (max-width: 600px) {
@@ -86,6 +87,15 @@ button {
         transform: translateX(-50%);
         width: 90%;
         color: white;
+    }
+}
+@media (max-width: 600px) {
+    #boton1, #boton2 {
+        position: relative; /* En móviles, mejor usar relativo */
+        width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 10px; /* Espaciado */
     }
 }
 
