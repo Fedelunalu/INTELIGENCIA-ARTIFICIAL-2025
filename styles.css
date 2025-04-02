@@ -1,130 +1,82 @@
-/* Asegurarse de que el video esté en el fondo */
+/* Asegurar que el video ocupa toda la pantalla */
 video {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
-    z-index: -1; /* Asegura que el video esté en el fondo */
+    z-index: -1; /* Envía el video al fondo */
 }
 
-/* Estilo para el título */
+/* Contenedor principal para centrar todo */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Estilo del título */
 #titulo {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 30px;
+    font-size: 24px;
     color: white;
-    z-index: 10; /* Asegura que el título esté encima del video */
+    text-align: center;
+    margin-bottom: 10px;
+    width: 80%;
+    max-width: 600px;
 }
 
-/* Estilo para los botones */
+/* Contenedor de opciones para que los botones estén alineados */
+#options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Estilos para los botones */
 button {
-    position: absolute;
-    font-size: 20px;
-    background-color: rgba(0, 0, 255, 0.7); /* Color de fondo de los botones */
+    width: 80%;
+    max-width: 350px;
+    padding: 12px;
+    font-size: 18px;
+    background: rgba(0, 0, 255, 0.7);
     color: white;
     border: none;
-    padding: 15px;
+    margin: 10px 0;
     cursor: pointer;
-    z-index: 10; /* Asegura que los botones estén sobre el video */
+    text-align: center;
 }
 
-#boton1 {
-    top: 50%;
-    left: 0%;
-    transform: translate(-50%, -50%);
-}
-
-#boton2 {
-    top: 60%; /* Botón 2 debajo del 1 */
-    left: 100%;
-    transform: translate(-50%, -50%);
-}
-#options-container button {
-    display: block;  /* Asegura que los botones estén en una nueva línea */
-    width: 100%;     /* Los botones ocupan todo el ancho disponible */
-    box-sizing: content-box; /* Incluye el padding y borde en el tamaño total */
-    padding: 10px;
-    margin: 5px 0;
-    text-align: center; /* Centra el texto del botón */
-    word-wrap: break-word; /* Asegura que el texto largo se ajuste dentro del botón */
-
-    
-}
-#playMusic {
-    font-size: 10px; /* Tamaño de la fuente más pequeño */
-    padding: 5px 10px; /* Ajuste de los bordes para hacerlo más compacto */
-    border-radius: 5px; /* Bordes redondeados */
-    border: 1px solid #ccc; /* Bordes más delgados */
-} /* <- Faltaba esta llave de cierre */    
-
-/* Estilos generales para dispositivos pequeños */
+/* 📱 Móviles en vertical */
 @media (max-width: 600px) {
-    body {
-        overflow: hidden; /* Evita el desplazamiento */
-        display: flex;
+    #options-container {
         flex-direction: column;
         align-items: center;
+    }
+
+    button {
+        width: 90%;
+    }
+}
+
+/* 📱 Móviles en horizontal */
+@media (max-width: 900px) and (orientation: landscape) {
+    #options-container {
+        flex-direction: row;
         justify-content: center;
     }
 
-    /* Ajustes para el título */
-    #titulo {
-        font-size: 20px;
-        top: 8%;
-    }
-
-    /* Ajustes para los botones */
-    #boton1, #boton2 {
-        position: relative;
-        width: 80%; /* Para que los botones sean más anchos y no se superpongan */
-        max-width: 300px;
-        text-align: center;
-        margin: 10px auto;
-    }
-
-    #options-container button {
-        width: 90%; /* Botones largos en función del texto */
-        max-width: 350px;
-        padding: 12px;
+    button {
+        width: auto;
+        padding: 10px 15px;
         font-size: 16px;
-        background: rgba(0, 0, 0, 0.7);
-        text-align: center;
     }
 }
-
-/* Para móviles en horizontal (landscape) */
-@media (max-width: 900px) and (orientation: landscape) {
-    #titulo {
-        font-size: 24px;
-        top: 5%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-    }
-
-    #boton1, #boton2 {
-        position: relative;
-        width: auto;
-        padding: 15px 20px;
-        font-size: 18px;
-        background: rgba(0, 0, 0, 0.7);
-        white-space: nowrap; /* Evita que el texto se divida en varias líneas */
-        margin: 10px auto;
-    }
-
-    #options-container button {
-        width: auto;
-        padding: 15px 20px;
-        font-size: 18px;
-        background: rgba(0, 0, 0, 0.7);
-        white-space: nowrap;
-        margin: 10px auto;
-    }
-}
-
-
 
