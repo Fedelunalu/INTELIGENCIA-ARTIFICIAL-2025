@@ -15,6 +15,30 @@ boton2.id = "boton2";
 boton2.innerHTML = "Opción 2";
 optionsContainer.appendChild(boton2);
 
+    // Crear el botón de música
+let botonMusica = document.createElement("button");
+botonMusica.id = "playMusic";
+botonMusica.innerHTML = "🎵";
+document.body.appendChild(botonMusica);
+
+// Crear el elemento de audio
+let musica = new Audio("musica.mp3");
+musica.loop = true; // Para que la música se repita
+
+// Variable para saber si la música está sonando
+let musicaEncendida = false;
+
+// Función para alternar la música
+botonMusica.addEventListener("click", function() {
+    if (musicaEncendida) {
+        musica.pause();
+    } else {
+        musica.play();
+    }
+    musicaEncendida = !musicaEncendida; // Alternar estado
+});
+
+
 // Crear el título y agregarlo al body
 let titulo = document.createElement("div");
 titulo.id = "titulo";
