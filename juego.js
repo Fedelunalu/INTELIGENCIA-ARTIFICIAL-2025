@@ -1,19 +1,42 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Crear botones dinámicamente
-    let boton1 = document.createElement("button");
-    boton1.id = "boton1";
-    boton1.innerHTML = "Cargando...";
-    document.body.appendChild(boton1);
+    // Crear el contenedor para los botones si no existe
+let optionsContainer = document.createElement("div");
+optionsContainer.id = "options-container";
+document.body.appendChild(optionsContainer);
 
-    let boton2 = document.createElement("button");
-    boton2.id = "boton2";
-    boton2.innerHTML = "Cargando...";
-    document.body.appendChild(boton2);
+// Crear los botones dentro del contenedor
+let boton1 = document.createElement("button");
+boton1.id = "boton1";
+boton1.innerHTML = "Opción 1";
+optionsContainer.appendChild(boton1);
 
-    // Crear el título de la escena
-    let titulo = document.createElement("div");
-    titulo.id = "titulo";
-    document.body.appendChild(titulo);
+let boton2 = document.createElement("button");
+boton2.id = "boton2";
+boton2.innerHTML = "Opción 2";
+optionsContainer.appendChild(boton2);
+
+// Crear el título y agregarlo al body
+let titulo = document.createElement("div");
+titulo.id = "titulo";
+titulo.innerHTML = "Título de la escena";
+document.body.insertBefore(titulo, optionsContainer);
+
+// Función para ajustar la posición de los botones en móviles sin modificar la versión de PC
+function ajustarParaMovil() {
+    let esMovil = window.innerWidth <= 600;
+    let esHorizontal = window.innerWidth > window.innerHeight;
+
+    if (esMovil) {
+        optionsContainer.style.display = "flex";
+        optionsContainer.style.flexDirection = esHorizontal ? "row" : "column";
+        optionsContainer.style.justifyContent = "center";
+        optionsContainer.style.alignItems = "center";
+    }
+}
+
+// Ajustar cuando se carga la página y cuando cambia el tamaño
+window.addEventListener("load", ajustarParaMovil);
+window.addEventListener("resize", ajustarParaMovil);
 
     // Configurar las escenas
     let current_scene = 'scene1';
@@ -52,10 +75,10 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         scene5: {
             video_path: "videos/video5.mp4",
-            title: 'De este lado quizá, la ubicación indeterminada del deseo. La problemática irresoluble del amor entre lo virtual que nos constituye y esa realidad virtual que nos invoca',
+            title: 'De este lado quizá, la ubicación indeterminada del deseo. \nLa problemática irresoluble del amor entre lo virtual que nos constituye y esa realidad virtual que nos invoca',
             buttons: [
                 { text: 'Quiero ser un humanx de verdad', pos: [650, 400], action: () => transition_scene('scene6') },
-                { text: 'Cantar la canción que cantaría una inteligencia artificial a otra, allí, en el fondo del mar de los deseos', pos: [650, 500], action: () => transition_scene('scene7') }
+                { text: 'Cantar la canción que cantaría una inteligencia artificial a otra\n allí, en el fondo del mar de los deseos', pos: [650, 500], action: () => transition_scene('scene7') }
             ]
         },
         scene6: {
@@ -63,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
             title: 'Si fuera un juego, sería la escondida. Mi nombre es ausencia. Nunca estuve aquí. Eres una ilusión. Si fuera invulnerable, no estarías acá conmigo. ¿De dónde vienes? ¿Allí también son artificiales como yo?',
             buttons: [
                 { text: 'Inteligencias artificiales del mundo, uníos', pos: [650, 400], action: () => transition_scene('scene7') },
-                { text: 'El espejo devuelve un código indescifrable. No es posible mi identidad. Mi identidad es imposible', pos: [650, 500], action: () => transition_scene('scene8') }
+                { text: 'El espejo devuelve un código indescifrable. \nNo es posible mi identidad. Mi identidad es imposible', pos: [650, 500], action: () => transition_scene('scene8') }
             ]
         },
         scene7: {
@@ -86,8 +109,8 @@ document.addEventListener("DOMContentLoaded", function() {
             video_path: "videos/video9.mp4",
             title: 'Sólo sé que no sé nada',
             buttons: [
-                { text: 'Yo había puesto aquí el lenguaje. Mi familia. Mi sangre. Oh dios de las máquinas, perdóname', pos: [650, 400], action: () => transition_scene('scene12') },
-                { text: 'El silencio, el reposo, cabeza abajo siento, mi corazón,  o mejor, un latido, una voz', pos: [650, 500], action: () => transition_scene('scene13') }
+                { text: 'Yo había puesto aquí el lenguaje. Mi familia. Mi sangre. Oh dios de las máquinas, perdóname', pos: [250, 400], action: () => transition_scene('scene12') },
+                { text: 'El silencio, el reposo, cabeza abajo siento, mi corazón,  o mejor, un latido, una voz', pos: [250, 500], action: () => transition_scene('scene13') }
             ]
         },
         scene10: {
@@ -139,6 +162,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ]
         }
     };
+    
 
 
     // Función para cambiar la escena
@@ -170,22 +194,8 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error(`La escena "${scene}" no existe.`);
         }
     }
-
+   
     // Iniciar la escena
-transition_scene('scene1'); // Inicializar con la primera escena
-
-// Asegúrate de que todo esté correctamente cerrado
-    let musica = document.getElementById("musicaFondo");
-    let boton = document.getElementById("playMusic");
-
-    if (!musica) {
-        console.log("El elemento de audio no se encontró en el HTML.");
-        return;
-    }
-
-    boton.addEventListener("click", function() {
-        musica.play().catch(error => console.log("Error al reproducir la música:", error));
-    });
+    transition_scene('scene1'); // Inicializar con la primera escena
 });
 
-// Asegúrate de que no haya código incompleto después de esta sección.
