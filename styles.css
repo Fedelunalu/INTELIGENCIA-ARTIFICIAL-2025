@@ -81,48 +81,51 @@ button {
 /* Para móviles en vertical (portrait) */
 @media (max-width: 600px) and (orientation: portrait) {
     .botones {
-        display: flex;
-        flex-direction: column; /* Coloca los botones en columna */
-        align-items: center; /* Centra los botones */
-        gap: 20px; /* Espaciado entre botones */
         position: absolute;
-        bottom: 10vh; /* Mueve los botones más abajo */
-        width: 100%;
+        left: 250px; /* Alineados a la izquierda */
+        display: flex;
+        flex-direction: column; /* Uno debajo del otro */
+        gap: 50px; /* Espaciado entre botones */
+    }
+
+    .botones button:nth-child(1) {
+        top: 400px;
+    }
+
+    .botones button:nth-child(2) {
+        top: 500px;
     }
 
     .botones button {
-        width: 80%; /* Hace los botones más grandes */
+        position: absolute;
+        width: auto;
         padding: 15px;
-        font-size: 18px; /* Ajusta el tamaño de la fuente en los botones */
+        font-size: 18px;
     }
 }
 
 /* Para móviles en horizontal (landscape) */
 @media (max-width: 600px) and (orientation: landscape) {
-    /* Reduce el tamaño de la letra */
-    body {
-        font-size: 12px; /* Ajusta según necesidad */
-    }
-
-    #titulo {
-        font-size: 18px; /* Ajusta el tamaño del título */
-    }
-
-    /* Botones en una sola línea (horizontal) */
     .botones {
-        display: flex;
-        flex-direction: row; /* Alinea los botones en fila */
-        justify-content: center; /* Centra los botones */
-        gap: 10px; /* Espaciado entre botones */
         position: absolute;
-        bottom: 10vh; /* Ajusta la posición */
-        width: 100%;
+        left: 500px; /* Centrado horizontalmente */
+        display: flex;
+        flex-direction: column; /* Se mantiene en columna */
+        gap: 50px; /* Espaciado para evitar superposición */
+    }
+
+    .botones button:nth-child(1) {
+        top: 400px;
+    }
+
+    .botones button:nth-child(2) {
+        top: 500px;
     }
 
     .botones button {
-        width: auto; /* Tamaño automático */
-        padding: 10px;
-        font-size: 14px; /* Botones más pequeños */
+        position: absolute;
+        width: auto;
+        padding: 15px;
+        font-size: 18px;
     }
 }
-
