@@ -3,8 +3,8 @@ video {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
     z-index: -1; /* Asegura que el video esté en el fondo */
 }
@@ -18,11 +18,12 @@ video {
     font-size: 30px;
     color: white;
     z-index: 10; /* Asegura que el título esté encima del video */
+    text-align: center;
+    width: 90%;
 }
 
 /* Estilo para los botones */
 button {
-    position: absolute;
     font-size: 20px;
     background-color: rgba(0, 0, 255, 0.7); /* Color de fondo de los botones */
     color: white;
@@ -30,36 +31,26 @@ button {
     padding: 15px;
     cursor: pointer;
     z-index: 10; /* Asegura que los botones estén sobre el video */
+    border-radius: 5px;
 }
 
-#boton1 {
-    top: 50%;
-    left: 0%;
-    transform: translate(-50%, -50%);
+#boton1, #boton2 {
+    width: 90%; /* Para que los botones sean más anchos y no se superpongan */
+    max-width: 350px;
+    text-align: center;
 }
 
-#boton2 {
-    top: 60%; /* Botón 2 debajo del 1 */
-    left: 100%;
-    transform: translate(-50%, -50%);
-}
-#options-container button {
-    display: block;  /* Asegura que los botones estén en una nueva línea */
-    width: 100%;     /* Los botones ocupan todo el ancho disponible */
-    box-sizing: content-box; /* Incluye el padding y borde en el tamaño total */
-    padding: 10px;
-    margin: 5px 0;
-    text-align: center; /* Centra el texto del botón */
-    word-wrap: break-word; /* Asegura que el texto largo se ajuste dentro del botón */
-
-    
-}
+/* Estilo específico para el botón de música */
 #playMusic {
-    font-size: 10px; /* Tamaño de la fuente más pequeño */
-    padding: 5px 10px; /* Ajuste de los bordes para hacerlo más compacto */
-    border-radius: 5px; /* Bordes redondeados */
-    border: 1px solid #ccc; /* Bordes más delgados */
-} /* <- Faltaba esta llave de cierre */    
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 14px;
+    padding: 8px 12px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 5px;
+}
 
 /* Estilos generales para dispositivos pequeños */
 @media (max-width: 600px) {
@@ -75,6 +66,7 @@ button {
     #titulo {
         font-size: 20px;
         top: 8%;
+        width: 90%;
     }
 
     /* Ajustes para los botones */
@@ -96,13 +88,18 @@ button {
         font-size: 16px;
         background: rgba(0, 0, 0, 0.7);
         text-align: center;
+        white-space: normal; /* Permite que el texto se ajuste sin apretarse */
     }
 }
 
 /* Para móviles en horizontal (landscape) */
 @media (max-width: 900px) and (orientation: landscape) {
+    body {
+        overflow: hidden;
+    }
+
     #titulo {
-        font-size: 24px;
+        font-size: 22px;
         top: 5%;
         left: 50%;
         transform: translateX(-50%);
@@ -117,18 +114,18 @@ button {
         display: flex;
         flex-direction: row; /* Botones en línea */
         justify-content: center;
-        gap: 15px;
+        gap: 10px;
         width: 100%;
     }
 
     .botones button {
         width: auto;
         padding: 15px 20px;
-        font-size: 18px;
+        font-size: 16px;
         background: rgba(0, 0, 0, 0.7);
-        white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+        white-space: normal; /* Permite ajustar el texto */
+        max-width: 300px;
     }
 }
-
 
 
