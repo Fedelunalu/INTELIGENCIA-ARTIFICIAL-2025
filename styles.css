@@ -66,46 +66,6 @@ button {
     cursor: pointer;
     z-index: 20; /* Asegura que esté sobre los demás elementos */
 }
-#chat-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 300px;
-    max-height: 400px;
-    background: rgba(0,0,0,0.7);
-    border-radius: 10px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    z-index: 30;
-}
-
-#chat-history {
-    flex: 1;
-    overflow-y: auto;
-    margin-bottom: 5px;
-    color: white;
-    font-size: 14px;
-}
-
-#chat-input {
-    padding: 5px;
-    font-size: 14px;
-    border-radius: 5px;
-    border: none;
-    margin-bottom: 5px;
-}
-
-#chat-send {
-    padding: 5px;
-    font-size: 14px;
-    border-radius: 5px;
-    border: none;
-    background-color: #00f;
-    color: white;
-    cursor: pointer;
-}
-
 
 /* 📱 Móviles en vertical */
 @media (max-width: 600px) {
