@@ -218,65 +218,6 @@ window.addEventListener("resize", ajustarParaMovil);
             console.error(`La escena "${scene}" no existe.`);
         }
     }
-   // --- CHAT IA ---
-let chatInput = document.createElement("input");
-chatInput.id = "chat-input";
-chatInput.placeholder = "Escribí algo...";
-let chatSend = document.createElement("button");
-chatSend.id = "chat-send";
-chatSend.innerHTML = "Enviar";
-let chatHistory = document.createElement("div");
-chatHistory.id = "chat-history";
-let chatContainer = document.createElement("div");
-chatContainer.id = "chat-container";
-
-chatContainer.appendChild(chatHistory);
-chatContainer.appendChild(chatInput);
-chatContainer.appendChild(chatSend);
-document.body.appendChild(chatContainer);
-
-let conversationHistory = [];
-
-chatSend.addEventListener("click", () => {
-    let userMessage = chatInput.value.trim();
-    if(userMessage === "") return;
-
-    appendMessage("Tú", userMessage);
-    conversationHistory.push({role: "user", content: userMessage});
-    chatInput.value = "";
-
-    // Enviar al servidor local
-    fetch("http://127.0.0.1:7860/generate", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({
-            prompt: userMessage,
-            history: conversationHistory
-        })
-    })
-    .then(res => res.json())
-    .then(data => {
-        let aiMessage = data.response; // ajustá según la respuesta real del server
-        appendMessage("IA", aiMessage);
-        conversationHistory.push({role: "npc", content: aiMessage});
-    })
-    .catch(err => {
-        appendMessage("IA", "Error al comunicarse con la IA.");
-        console.error(err);
-    });
-});
-
-chatInput.addEventListener("keypress", function(e){
-    if(e.key === "Enter") chatSend.click();
-});
-
-function appendMessage(sender, message){
-    let msgDiv = document.createElement("div");
-    msgDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
-    chatHistory.appendChild(msgDiv);
-    chatHistory.scrollTop = chatHistory.scrollHeight;
-}
-
     // Iniciar la escena
     transition_scene('scene1'); // Inicializar con la primera escena
 });
